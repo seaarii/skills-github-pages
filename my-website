@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 20px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            font-size: 5%;
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header nav a:hover {
+            color: gray;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('your-image.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .hero h1 {
+            font-size: 5%;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 30px;
+            border-radius: 5px;
+            animation: slideIn 1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .work-section {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .work-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .work-item {
+            position: relative;
+            width: 30%;
+            transition: transform 0.3s ease;
+        }
+
+        .work-item img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .work-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .work-item .description {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#work">Work</a>
+            <a href="#photos">Photos</a>
+            <a href="#introduce">Introduce</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Name</h1>
+    </section>
+
+    <section id="work" class="section">
+        <div class="work-section">
+            <div class="work-row">
+                <div class="work-item">
+                    <img src="work1.jpg" alt="Work 1" onclick="goToGallery()">
+                    <div class="description">Work 1 Description</div>
+                </div>
+                <div class="work-item">
+                    <img src="work2.jpg" alt="Work 2" onclick="goToGallery()">
+                    <div class="description">Work 2 Description</div>
+                </div>
+                <div class="work-item">
+                    <img src="work3.jpg" alt="Work 3" onclick="goToGallery()">
+                    <div class="description">Work 3 Description</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="photos" class="section">
+        <!-- Photos content here -->
+    </section>
+
+    <section id="introduce" class="section">
+        <!-- Introduce content here -->
+    </section>
+
+    <script>
+        function goToGallery() {
+            window.location.href = 'gallery.html';
+        }
+    </script>
+</body>
+</html>
